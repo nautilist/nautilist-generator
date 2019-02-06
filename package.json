@@ -4,7 +4,11 @@
   "description": "A CLI generator for creating static sites from Nautilist formatted yaml",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node bin/index.js"
+  },
+  "bin": {
+    "nautilist-generator": "bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/nautilist/nautilist-generator/issues"
   },
-  "homepage": "https://github.com/nautilist/nautilist-generator#readme"
+  "homepage": "https://github.com/nautilist/nautilist-generator#readme",
+  "dependencies": {
+    "choo": "^6.13.1",
+    "commander": "^2.19.0",
+    "js-yaml": "^3.12.1",
+    "slug": "^0.9.3"
+  }
 }
