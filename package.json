@@ -1,0 +1,19 @@
+{
+  "name": "nautilist-generator",
+  "version": "0.0.1",
+  "description": "A CLI generator for creating static sites from Nautilist formatted yaml",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nautilist/nautilist-generator.git"
+  },
+  "author": "@joeyklee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nautilist/nautilist-generator/issues"
+  },
+  "homepage": "https://github.com/nautilist/nautilist-generator#readme"
+}
