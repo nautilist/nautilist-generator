@@ -40,8 +40,11 @@ program
       }
       
 
-      const outputName = path.dirname(ymlFile) + "/" + slug(doc.name) + '.html'
-      writeIndex(outputName , htmlString)
+      const outputDirectory = path.dirname(ymlFile) + "/" + slug(doc.name)
+      mkdir(outputDirectory, function(){
+        writeToHtml(outputDirectory+ "/index.html" , htmlString)
+      })
+      
 
     } catch (e) {
       console.log(e);
@@ -64,11 +67,24 @@ program
     } catch (e) {
       console.log('⚠️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️')
       console.log(e.message);
-      console.log("Oh no! Something is wrong!")
+      console.log("Oh no! Something is wrong with your file!")
       console.log('⚠️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️')
       
     }
   })
+
+
+  // program
+  // .command('check <ymlFile>')
+  // .description('check which dir you are in')
+  // .action(function(ymlFile) {
+  //   // Get document, or throw exception on error
+    
+  //   console.log("currently in: ", path.join(__dirname, ymlFile))
+  //   // console.log("cwd in: ", process.cwd() )
+
+  //   // }
+  // })
 
 
 
@@ -84,8 +100,19 @@ function loadFile(name) {
 	return fs.readFileSync(path.join(__dirname, name), 'utf-8');
 }
 
-function writeIndex(path, str) {
-	fs.writeFileSync(path, str);
+function writeToHtml(path, str, mode) {
+	fs.writeFileSync(path, str, {
+		mode: mode || 0666
+	});
+	console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+}
+
+function mkdir(path, fn) {
+	fs.mkdir(path, {recursive: true, mode: 0755}, function(err) {
+		if (err) throw err;
+		console.log('   \033[36mcreate\033[0m : ' + path);
+		fn && fn();
+	});
 }
 
 
