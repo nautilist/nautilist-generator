@@ -6,20 +6,20 @@ A node.js commandline generator tool for generating static sites with Nautilist 
 ## Install
 > Install the commandline tool by running the following
 
-```
+```sh
 npm i -g nautilist-generator
 ```
 
 ## Usage
 
 ### validate
-```
+```sh
 nautilist-generator validate my-super-list.yaml
 ```
 > Validate your `.yaml` file
 
 ### generate
-```
+```sh
 nautilist-generator generate my-super-list.yaml
 ```
 > Generate a static HTML site with using the `.yaml` list you created 
