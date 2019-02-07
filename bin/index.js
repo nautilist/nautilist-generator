@@ -12,6 +12,7 @@ const choo = require('choo')
 const path = require('path')
 const slug = require('slug')
 
+
 program
 	.option('-v, --version', 'Show version of nautilist-generator', pjson.version)
 
@@ -47,19 +48,28 @@ program
     }
   })
 
-// program
-//   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-//   .parse(process.argv);
+program
+  .command('validate <ymlFile>')
+  .description('Validate using yaml linter for your .yml list')
+  .action(function(ymlFile) {
+    // Get document, or throw exception on error
+    try {
+      const doc = yaml.safeLoad(fs.readFileSync(ymlFile, 'utf8'));
+      const parsedYaml = yaml.safeDump(doc);
+      console.log('🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈')
+      console.log(parsedYaml)
+      console.log("Success - your list is beautiful!")
+      console.log('🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈')
+      
+    } catch (e) {
+      console.log('⚠️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️')
+      console.log(e.message);
+      console.log("Oh no! Something is wrong!")
+      console.log('⚠️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️️⚠️⚠️')
+      
+    }
+  })
 
-// program
-//   .arguments('<file>')
-//   .option('-b, --build <username>', 'The user to authenticate as')
-//   .option('-p, --password <password>', 'The user\'s password')
-//   .action(function(file) {
-//     console.log('user: %s pass: %s file: %s',
-//     program.username, program.password, file);
-//   })
-//   .parse(process.argv);
 
 
 if (program.version) {
@@ -235,21 +245,3 @@ ${_parsedYaml}
   return string;
     
 }
-
-// /**
-//  * Module dependencies.
-//  */
-
-// const program = require('commander');
-
-// program
-//   .version('0.0.1')
-//   .option('-b, --build <inputYml>', 'build a page with <inputYml>')
-//   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-//   .parse(process.argv);
-
-// console.log('you ordered a pizza with:');
-// if (program.build){
-
-// }
-// console.log('  - %s cheese', program.cheese);

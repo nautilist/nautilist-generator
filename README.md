@@ -4,28 +4,24 @@ A node.js commandline generator tool for generating static sites with Nautilist 
 ## Install
 
 TODO: Not yet published to NPM - stay tuned!
-> npm i nautilist-generator
+> npm i -g nautilist-generator
 
 
 ## Usage (forthcoming, not yet implemented)
 
 ### validate
 ```
-nautilist-generator validate -i my-super-list.yaml
+nautilist-generator validate my-super-list.yaml
 ```
 > Validate your `.yaml` file
 
 ### generate
 ```
-nautilist-generator generate -i my-super-list.yaml
+nautilist-generator generate my-super-list.yaml
 ```
 > Generate a static HTML site with using the `.yaml` list you created 
 
-This will produce:
-- index.html
-- bundle.js
-- style.css
-
+This will produce an `.html` file with the name of the list you've created: `e.g. my-super-awesome-list.yml`
 
 
 
