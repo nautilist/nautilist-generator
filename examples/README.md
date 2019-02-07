@@ -22,5 +22,5 @@ nautilist-generator generate my-p5-landscape.yaml
 ![Single list example index rendered as this page](../assets/example-singlelist.png)
 
 
-### Single List Example
+### Multi List Example
 ![Multi list example index rendered as this page](../assets/example-multilist.png)
