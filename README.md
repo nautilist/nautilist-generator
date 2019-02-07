@@ -1,11 +1,14 @@
 # nautilist-generator
 A node.js commandline generator tool for generating static sites with Nautilist formatted YAML 
 
+![Generator Image](assets/generator.png)
+
 ## Install
+> Install the commandline tool by running the following
 
-TODO: Not yet published to NPM - stay tuned!
-> npm i -g nautilist-generator
-
+```
+npm i -g nautilist-generator
+```
 
 ## Usage (forthcoming, not yet implemented)
 
@@ -30,7 +33,7 @@ This will produce an `.html` file with the name of the list you've created: `e.g
 👉 [Examples folder here](/examples)
 
 
-## Features (forthcoming, not yet implemented)
+## Features (forthcoming, not yet implemented 🌴)
 > Some features that are forthcoming
 
 ### Live Reload 
