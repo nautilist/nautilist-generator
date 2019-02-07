@@ -7,9 +7,6 @@ const program = require('commander');
 const pjson = require('../package.json');
 const yaml = require('js-yaml');
 const fs   = require('fs');
-const html = require('choo/html')
-const choo = require('choo')
-const path = require('path')
 
 const generator = require('../helpers/generator/generator.js');
 
@@ -34,6 +31,7 @@ program
     try {
       const doc = yaml.safeLoad(fs.readFileSync(req, 'utf8'));
       const parsedYaml = yaml.safeDump(doc);
+
       console.log('🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈🌈')
       console.log(parsedYaml)
       console.log("Success - your list is beautiful!")
