@@ -24,7 +24,7 @@ nautilist-generator generate my-super-list.yaml
 ```
 > Generate a static HTML site with using the `.yaml` list you created 
 
-This will produce an `.html` file with the name of the list you've created: `e.g. my-super-awesome-list.yml`
+This will produce an `index.html` file inside of a folder with the name of the list you've created. If you are generating from `my-super-awesome-list`, then you'll get: `e.g. my-super-awesome-list/index.html`
 
 
 ## Examples
