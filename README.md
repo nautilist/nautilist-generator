@@ -24,6 +24,11 @@ nautilist-generator generate my-super-list.yaml
 This will produce an `.html` file with the name of the list you've created: `e.g. my-super-awesome-list.yml`
 
 
+## Examples
+> Check the `/examples` directory for examples of what happens when you run the generator on your list
+
+👉 [Examples folder here](/examples)
+
 
 ## Features (forthcoming, not yet implemented)
 > Some features that are forthcoming
