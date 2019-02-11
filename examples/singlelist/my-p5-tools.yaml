@@ -1,4 +1,4 @@
-type: "SingleList"
+type: "list"
 name: "Handy P5.js Tools"
 description: "This is a list of handy p5.js Tools ranging from commandline tools, project generators, and web editors."
 features:

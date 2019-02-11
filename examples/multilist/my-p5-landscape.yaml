@@ -1,8 +1,8 @@
-type: "MultiList"
+type: "list"
 name: "The P5.js Landscape"
 description: "This is a list of the P5.js landscape."
 features:
-- type: "SingleList" 
+- type: "list" 
   name: "Handy P5.js Tools"
   description: "This is a list of handy p5.js Tools ranging from commandline tools, project generators, and web editors."
   features:
@@ -18,7 +18,7 @@ features:
     - url: "http://1023.io/p5-inspector/"
       name: "P5 playground"
       description: "A What you see is what you get editor for p5.js"
-- type: "SingleList"
+- type: "list"
   name: "P5 Libraries"
   description: "A list of libraries built for P5.js."
   features:

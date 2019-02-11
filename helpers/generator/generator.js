@@ -17,14 +17,24 @@ class Generator{
 		  const parsedYaml = yaml.safeDump(doc);
 		  console.log(parsedYaml)
 		  let htmlString = ''
+
+			let isMultiList = doc.features.some(item => item.hasOwnProperty('type'));
+
+			// if any of the features of the list has a "type" property,
+			// then it is a multilist, if not, then it is a single
+			if(isMultiList){
+				htmlString = makeMultiList(doc, parsedYaml);
+			} else {
+				htmlString = makeSingleList(doc, parsedYaml);
+			} 
 		  
-		  if(doc.type == "MultiList"){
-			htmlString = makeMultiList(doc, parsedYaml);
-		  } else if (doc.type == "SingleList"){
-			htmlString = makeSingleList(doc, parsedYaml);
-		  } else{
-			return new Error("not a SingleList or MultiList")
-		  }
+		  // if(doc.type == "MultiList"){
+			// htmlString = makeMultiList(doc, parsedYaml);
+		  // } else if (doc.type == "SingleList"){
+			// htmlString = makeSingleList(doc, parsedYaml);
+		  // } else{
+			// return new Error("not a SingleList or MultiList")
+		  // }
 		  
 		  const outputDirectory = path.dirname(_req) + "/" + slug(doc.name)
 		  
@@ -138,7 +148,7 @@ function linkList(list){
 			  <legend class="f6 b">YAML in Nautilist Format - Copy and Paste This into another project!</legend>
 			  <!-- TODO add copy button to get formatted yaml regardless of screensize -->
 			  <pre class="pre ba br2 pa2 f7 b--light-gray">
-  ${_parsedYaml}
+${_parsedYaml}
 			  </pre>
 			  </fieldset>
   
@@ -197,7 +207,7 @@ function linkList(list){
 			  <legend class="f6 b">YAML in Nautilist Format - Copy and Paste This into another project!</legend>
 			  <!-- TODO add copy button to get formatted yaml regardless of screensize -->
 			  <pre class="pre ba br2 pa2 f7 b--light-gray">
-  ${_parsedYaml}
+${_parsedYaml}
 			  </pre>
 			  </fieldset>
   
